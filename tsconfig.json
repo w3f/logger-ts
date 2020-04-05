@@ -9,8 +9,10 @@
     "target": "es6"
   },
   "exclude": [
-      "node_modules",
-      "**/*.spec.ts"
+    "node_modules",
+    "**/*.spec.ts",
+    "test/**/*",
+    "dist/**/*"
   ],
   "_comment": "The logger libray contains typescript errors"
 }
