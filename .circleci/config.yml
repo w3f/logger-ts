@@ -22,7 +22,9 @@ jobs:
 
       - run:
           name: Publish package
-          command: yarn publish
+          command: |
+            echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+            yarn publish --access public
 
 workflows:
   version: 2
