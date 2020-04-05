@@ -22,7 +22,7 @@ jobs:
 
       - run:
           name: Publish package
-          command: npm publish --userconfig=.npmrc-auth
+          command: npm publish --userconfig=.npmrc-auth --access=public
 
 workflows:
   version: 2
