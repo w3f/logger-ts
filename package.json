@@ -5,6 +5,7 @@
   "repository": "git@github.com:w3f/logger-ts.git",
   "author": "W3F Infrastructure Team <devops@web3.foundation>",
   "license": "Apache-2.0",
+  "types": "./dist/src/index.d.ts",
   "scripts": {
     "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
     "build": "tsc --build tsconfig.json",
