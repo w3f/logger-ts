@@ -10,5 +10,6 @@ describe('createLogger', () => {
         const logger = createLogger('debug');
 
         ((): void => { logger.info('hello world') }).should.not.throw();
+        ((): void => { logger.debug('hello world') }).should.not.throw();
     });
 });

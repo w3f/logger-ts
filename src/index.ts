@@ -2,12 +2,14 @@ import winston from 'winston';
 
 export interface Logger {
     info: (msg: string) => void;
+    debug: (msg: string) => void;
 }
 
 export function createLogger(level = 'info'): Logger {
     return winston.createLogger({
         level: level,
         format: winston.format.combine(
+            winston.format.colorize(),
             winston.format.timestamp({
                 format: 'YYYY-MM-DD HH:mm:ss'
             }),
