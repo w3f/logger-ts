@@ -6,6 +6,7 @@ export interface Logger {
     error: (msg: string) => void;
     warn: (msg: string) => void;
     verbose: (msg: string) => void;
+    log: (level: string, msg: string) => void;
 }
 
 export function createLogger(level = 'info'): Logger {
