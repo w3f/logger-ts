@@ -12,5 +12,7 @@ describe('createLogger', () => {
         ((): void => { logger.info('hello world') }).should.not.throw();
         ((): void => { logger.debug('hello world') }).should.not.throw();
         ((): void => { logger.error('hello world') }).should.not.throw();
+        ((): void => { logger.warn('hello world') }).should.not.throw();
+        ((): void => { logger.verbose('hello world') }).should.not.throw();
     });
 });
