@@ -1,6 +1,6 @@
 {
   "name": "@w3f/logger",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Logger functionality",
   "repository": "git@github.com:w3f/logger-ts.git",
   "author": "W3F Infrastructure Team <devops@web3.foundation>",
