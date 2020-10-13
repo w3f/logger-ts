@@ -1,13 +1,15 @@
 {
   "name": "@w3f/logger",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Logger functionality",
   "repository": "git@github.com:w3f/logger-ts.git",
   "author": "W3F Infrastructure Team <devops@web3.foundation>",
   "license": "Apache-2.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
     "build": "tsc --build tsconfig.json",
@@ -17,13 +19,13 @@
     "start": "node ./dist/src/index.js start"
   },
   "dependencies": {
-    "winston": "^3.2.1"
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@types/chai": "^4.2.9",
+    "@types/mocha": "^7.0.1",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
-    "@types/mocha": "^7.0.1",
     "chai": "^4.2.0",
     "eslint": "^6.6.0",
     "mocha": "^7.0.0",
