@@ -9,17 +9,40 @@ export interface Logger {
     log: (level: string, msg: string) => void;
 }
 
-export function createLogger(level = 'info'): Logger {
+export function jsonFormat() {
+    return winston.format.combine(
+        winston.format.timestamp({
+            format: 'YYYY-MM-DD HH:mm:ss'
+        }),
+        winston.format.errors({ stack: true }),
+        winston.format.json()
+    )
+}
+
+export function consoleFormat() {
+    return winston.format.combine(
+        winston.format.colorize(),
+        winston.format.timestamp({
+            format: 'YYYY-MM-DD HH:mm:ss'
+        }),
+        winston.format.errors({ stack: true }),
+        winston.format.printf(info => `${info.timestamp} ${info.level}: ${info.message}`)
+    )
+}
+
+export function formatPicker(format) {
+    if (format === 'json') {
+        return jsonFormat()
+    } else {
+        return consoleFormat()
+    }
+}
+
+
+export function createLogger(level = 'info', format = 'default'): Logger {
     return winston.createLogger({
         level: level,
-        format: winston.format.combine(
-            winston.format.colorize(),
-            winston.format.timestamp({
-                format: 'YYYY-MM-DD HH:mm:ss'
-            }),
-            winston.format.errors({ stack: true }),
-            winston.format.printf(info => `${info.timestamp} ${info.level}: ${info.message}`)
-        ),
+        format: formatPicker(format),
         transports: [
             new winston.transports.Console()
         ]
