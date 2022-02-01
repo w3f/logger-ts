@@ -9,7 +9,7 @@ export interface Logger {
     log: (level: string, msg: string) => void;
 }
 
-export function jsonFormat() {
+export function jsonFormat(): winston.Logform.Format {
     return winston.format.combine(
         winston.format.timestamp({
             format: 'YYYY-MM-DD HH:mm:ss'
@@ -19,7 +19,7 @@ export function jsonFormat() {
     )
 }
 
-export function consoleFormat() {
+export function consoleFormat(): winston.Logform.Format {
     return winston.format.combine(
         winston.format.colorize(),
         winston.format.timestamp({
@@ -30,7 +30,7 @@ export function consoleFormat() {
     )
 }
 
-export function formatPicker(format) {
+export function formatPicker(format): winston.Logform.Format {
     if (format === 'json') {
         return jsonFormat()
     } else {
