@@ -22,7 +22,7 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
-    "@types/chai": "4.2.18",
+    "@types/chai": "5.2.3",
     "@types/mocha": "7.0.2",
     "@typescript-eslint/eslint-plugin": "2.34.0",
     "@typescript-eslint/parser": "2.34.0",
